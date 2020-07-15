@@ -1,4 +1,4 @@
-class EntriesController < ApplicationController
+class Api::EntriesController < ApplicationController
 
     def index
         get_expense

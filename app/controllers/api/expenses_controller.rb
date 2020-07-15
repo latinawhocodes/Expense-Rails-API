@@ -1,4 +1,4 @@
-class ExpensesController < ApplicationController
+class Api::ExpensesController < ApplicationController
 
     def index 
         @expenses = Expense.all 
