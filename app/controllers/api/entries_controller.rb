@@ -3,20 +3,20 @@ class Api::EntriesController < ApplicationController
     def index
         get_expense
         @entries = Entry.all 
-        render json: @entries, include: [:expense], except: [:created_at, :updated_at]
+        render json: @entries, except: [:created_at, :updated_at]
     end
 
     def show 
         get_expense
         @entries = @expense.entries.find_by(id: params[:id])
-        render json: @entries, include [:expense], except: [:created_at, :updated_at]
+        render json: @entries, except: [:created_at, :updated_at]
     end
 
     def create 
         @entry = @expense.entries.build(entry_params)
         
         if @entry.save
-            render json: @entry, include: [:expense], except: [:created_at, :updated_at]
+            render json: @entry, except: [:created_at, :updated_at]
         else 
             render json: {message: "ERROR"}
         end
@@ -25,7 +25,7 @@ class Api::EntriesController < ApplicationController
     def update 
         find_entry
         if @entry.update
-            render json: @entry, include: [:expense], except: [:created_at, :updated_at]
+            render json: @entry, except: [:created_at, :updated_at]
         else 
             render json: {message: "ERROR"}
         end
@@ -44,7 +44,7 @@ class Api::EntriesController < ApplicationController
     end
 
     def get_expense
-        @expense = Expense.find(params[:id])
+        @expense = Expense.find_by(params[:id])
     end
 
     def entry_params
