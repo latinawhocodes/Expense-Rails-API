@@ -14,4 +14,4 @@ pets = Expense.create(category: "Pets")
 miscellaneous = Expense.create(category: "Miscellaneous")
 
 
-expense1 = Entry.create(amount: 200.00, description: "Flatiron School Payment", date: "June 20")
+expense1 = Entry.create(amount: 200.00, description: "Flatiron School Payment", date: "June 20", expense_id: 2)
