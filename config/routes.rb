@@ -1,9 +1,10 @@
-Rails.application.routes.draw do
 
-  namespace :api do 
-    resources :expenses do 
+
+Rails.application.routes.draw do
+  scope :api do 
     resources :entries
-    end
-  end
+    resources :expenses
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  end
 end
+

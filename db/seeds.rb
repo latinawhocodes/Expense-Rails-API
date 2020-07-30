@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 utilities = Expense.create(category: "Utilities")
 education = Expense.create(category: "Education")
 shopping = Expense.create(category: "Shopping")
@@ -14,4 +15,4 @@ pets = Expense.create(category: "Pets")
 miscellaneous = Expense.create(category: "Miscellaneous")
 
 
-expense1 = Entry.create(amount: 200.00, description: "Flatiron School Payment", date: "June 20", expense_id: 2)
+expense1 = Entry.create(amount: 200.00, description: "Flatiron School Payment", date: "June 20")
